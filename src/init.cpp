@@ -1627,14 +1627,7 @@ bool AppInit2()
                         break;
                     }
                 }
-
-                // Recalculate money supply
-                if (fReindexMoneySupply) {
-                    LOCK(cs_main);
-                    // Skip zpiv if already reindexed
-                    RecalculatePIVSupply(1, fReindexZerocoin);
-                }
-
+                
                 if (!fReindex) {
                     uiInterface.InitMessage(_("Verifying blocks..."));
 
